@@ -1,0 +1,7 @@
+name: testDeploymentApp
+account: pparacch
+server: shinyapps.io
+appId: 76630
+bundleId: 343785
+url: https://pparacch.shinyapps.io/testDeploymentApp/
+when: 1452032739.5376
