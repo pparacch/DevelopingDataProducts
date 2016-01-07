@@ -1,3 +1,12 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
+```{r echo=FALSE}
+Sys.setlocale("LC_ALL", "C")
+```
+
 # DevelopingDataProducts
 ##ToolSet
 
@@ -64,3 +73,28 @@ manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
 
  [manipulate](https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate)
  
+###rCharts
+rCharts is an R package to create, customize and publish interactive javascript visualizations from R using a familiar lattice style plotting interface.
+
+[rCharts](http://ramnathv.github.io/rCharts/)
+
+```{r eval=FALSE}
+require(devtools)
+install_github("rCharts", "ramnathv")
+```
+
+
+
+#Week 1
+Quiz
+```{r echo=FALSE, eval=FALSE}
+#01
+library(manipulate)
+myPlot <- function(s) {
+    plot(cars$dist - mean(cars$dist), cars$speed - mean(cars$speed))
+    abline(0, s)
+}
+
+manipulate(myPlot(s), s = slider(0,2, step = 0.1))
+
+```

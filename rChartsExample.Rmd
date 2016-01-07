@@ -1,0 +1,100 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+
+```{r echo=FALSE, results='hide', message=FALSE}
+Sys.setlocale("LC_ALL", "C")
+```
+
+```{r}
+library(rCharts)
+hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")
+n1 <- nPlot(Freq ~ Hair, group = "Eye", data = hair_eye_male, type = "multiBarChart")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+n1$print('chart1', include_assets = TRUE)
+```
+
+```{r}
+## Example 1 Facetted Scatterplot
+names(iris) = gsub("\\.", "", names(iris))
+r1 <- rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')
+
+## Example 2 Facetted Barplot
+hair_eye = as.data.frame(HairEyeColor)
+r2 <- rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+r1$print('chartr1', include_assets = TRUE)
+r2$print('chartr2', include_assets = TRUE)
+```
+
+```{r}
+#Using Polychart
+r3 <- rPlot(mpg ~ wt | am + vs, data = mtcars, type = "point", color = "gear")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+r3$print("chartr3", include_assets = TRUE)
+```
+
+```{r}
+#Using MorrisJS
+data(economics, package = "ggplot2")
+econ <- transform(economics, date = as.character(date))
+m1 <- mPlot(x = "date", y = c("psavert", "uempmed"), type = "Line", data = econ)
+m1$set(pointSize = 0, lineWidth = 1)
+```
+```{r, echo=FALSE,results='asis',comment=NA}
+m1$print("chartm1", include_assets = TRUE)
+```
+
+```{r}
+#Using NVD3
+hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")
+n1 <- nPlot(Freq ~ Hair, group = "Eye", data = hair_eye_male, type = "multiBarChart")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+n1$print("chart3")
+```
+
+```{r}
+#Using xCharts
+require(reshape2)
+uspexp <- melt(USPersonalExpenditure)
+names(uspexp)[1:2] = c("category", "year")
+x1 <- xPlot(value ~ year, group = "category", data = uspexp, type = "line-dotted")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+x1$print("chartx1", include_assets = TRUE)
+```
+
+```{r}
+#Using HighCharts
+h1 <- hPlot(x = "Wr.Hnd", y = "NW.Hnd", data = MASS::survey, type = c("line", 
+    "bubble", "scatter"), group = "Clap", size = "Age")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+h1$print("charth1", include_assets = TRUE)
+```
+
+```{r}
+#Using leaflet (package)
+library(leaflet)
+map3 <- Leaflet$new()
+map3$setView(c(51.505, -0.09), zoom = 13)
+map3$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
+map3$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
+```
+
+```{r, echo=FALSE,results='asis',comment=NA}
+map3$print("chartmap3", include_assets=TRUE)
+```
