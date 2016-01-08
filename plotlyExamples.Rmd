@@ -1,0 +1,16 @@
+---
+title: "plotlyExamples"
+author: "Pier Lorenzo Paracchini"
+date: "January 8, 2016"
+output: html_document
+---
+
+```{r echo=FALSE, results='hide', message=FALSE}
+Sys.setlocale("LC_ALL", "C")
+```
+
+```{r simpleExample, eval=TRUE}
+library(plotly)
+p <- plot_ly(midwest, x = percollege, color = state, type = "box")
+p
+```

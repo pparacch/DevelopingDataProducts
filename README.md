@@ -3,6 +3,7 @@ output:
   html_document: 
     keep_md: yes
 ---
+
 ```{r echo=FALSE}
 Sys.setlocale("LC_ALL", "C")
 ```
@@ -10,9 +11,10 @@ Sys.setlocale("LC_ALL", "C")
 # DevelopingDataProducts
 ##ToolSet
 
-###shiny & shinyapps
+###shiny & shinyapps  
 `shiny` package - web framework for data product developed in R for intercating grphics and pages
 
+`shinyapps` package - make data product available to everyone
 
 
 ```{r eval=FALSE}
@@ -32,24 +34,22 @@ runExample("08_html") # Shiny app built from HTML
 runExample("09_upload") # file upload wizard
 runExample("10_download") # file download wizard
 runExample("11_timer") # an automated timer
-
-
 ```
 
 [shiny](http://shiny.rstudio.com/)  
 [runApp](http://shiny.rstudio.com/reference/shiny/latest/runApp.html)  
 [debugging Shiny Application](http://shiny.rstudio.com/articles/debugging.html)  
 
-`shinyapps` package - make data product available to everyone
 
 ```{r eval=FALSE}
 install.packages("devtools")
 devtools::install_github('rstudio/shinyapps')
 ```
 
- [shinyapps](https://www.shinyapps.io/)  
+ [shinyapps](https://www.shinyapps.io/)
+ (__github__)
  
- ###`manipulate` function
+ ###`manipulate` function  
  Mainly used for propotyping quick and iterative graphic
  
  ```{r eval=FALSE}
@@ -73,7 +73,7 @@ manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
 
  [manipulate](https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate)
  
-###rCharts
+###rCharts  
 rCharts is an R package to create, customize and publish interactive javascript visualizations from R using a familiar lattice style plotting interface.
 
 [rCharts](http://ramnathv.github.io/rCharts/)
@@ -83,18 +83,18 @@ require(devtools)
 install_github("rCharts", "ramnathv")
 ```
 
+###googlevis
 
+###plotly (__github__)
+Plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.
 
-#Week 1
-Quiz
-```{r echo=FALSE, eval=FALSE}
-#01
-library(manipulate)
-myPlot <- function(s) {
-    plot(cars$dist - mean(cars$dist), cars$speed - mean(cars$speed))
-    abline(0, s)
-}
+[plotly](https://plot.ly/)  
+[plotly and R](https://plot.ly/r/)
+[plotly in knitr reports](https://plot.ly/r/knitr/)
+[plotly in knitr reports - 2](http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/)
 
-manipulate(myPlot(s), s = slider(0,2, step = 0.1))
-
+```{r eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("ropensci/plotly")
 ```
+
