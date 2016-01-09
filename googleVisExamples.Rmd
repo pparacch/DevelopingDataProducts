@@ -1,0 +1,15 @@
+---
+title: "googleVis"
+author: "ppar"
+date: "9 January 2016"
+output: html_document
+---
+
+```{r echo=FALSE, results='hide', message=FALSE}
+Sys.setlocale("LC_ALL", "C")
+require(googleVis)
+```
+
+```{r eval=FALSE}
+demo(googleVis)
+```

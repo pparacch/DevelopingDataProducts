@@ -9,12 +9,12 @@ hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex == "Male")
 n1 <- nPlot(Freq ~ Hair, group = "Eye", data = hair_eye_male, type = "multiBarChart")
 ```
 
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/css/nv.d3.css>
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/css/rNVD3.css>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/js/d3.v3.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/js/nv.d3.min-new.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/nvd3/js/fisheye.js></script> 
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/css/nv.d3.css>
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/css/rNVD3.css>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/js/jquery-1.8.2.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/js/d3.v3.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/js/nv.d3.min-new.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/nvd3/js/fisheye.js></script> 
  <style>
   .rChart {
     display: block;
@@ -198,7 +198,7 @@ hair_eye = as.data.frame(HairEyeColor)
 r2 <- rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
 ```
 
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
  <style>
   .rChart {
     display: block;
@@ -243,7 +243,7 @@ r2 <- rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
     })
     var graph_chartr1 = polyjs.chart(chartParams);
 </script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
  <style>
   .rChart {
     display: block;
@@ -294,7 +294,7 @@ r2 <- rPlot(Freq ~ Hair | Eye, color = 'Eye', data = hair_eye, type = 'bar')
 r3 <- rPlot(mpg ~ wt | am + vs, data = mtcars, type = "point", color = "gear")
 ```
 
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/polycharts/js/polychart2.standalone.js></script> 
  <style>
   .rChart {
     display: block;
@@ -360,10 +360,10 @@ m1$set(pointSize = 0, lineWidth = 1)
 Loading required package: reshape2
 ```
 
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/morris/css/morris.css>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/morris/js/jquery-1.8.2.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/morris/js/raphael-2.1.0.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/morris/js/morris.min.js></script> 
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/morris/css/morris.css>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/morris/js/jquery-1.8.2.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/morris/js/raphael-2.1.0.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/morris/js/morris.min.js></script> 
  <style>
   .rChart {
     display: block;
@@ -5167,9 +5167,9 @@ names(uspexp)[1:2] = c("category", "year")
 x1 <- xPlot(value ~ year, group = "category", data = uspexp, type = "line-dotted")
 ```
 
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/xcharts/css/xcharts.min.css>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/xcharts/js/d3.v2.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/xcharts/js/xcharts.min.js></script> 
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/xcharts/css/xcharts.min.css>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/xcharts/js/d3.v2.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/xcharts/js/xcharts.min.js></script> 
  <style>
   .rChart {
     display: block;
@@ -5328,10 +5328,10 @@ h1 <- hPlot(x = "Wr.Hnd", y = "NW.Hnd", data = MASS::survey, type = c("line",
 ## c("line", : Observations with NA has been removed
 ```
 
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/highcharts-more.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/highcharts/js/exporting.js></script> 
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/highcharts/js/highcharts.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/highcharts/js/highcharts-more.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/highcharts/js/exporting.js></script> 
  <style>
   .rChart {
     display: block;
@@ -6596,20 +6596,105 @@ h1 <- hPlot(x = "Wr.Hnd", y = "NW.Hnd", data = MASS::survey, type = c("line",
 
 
 ```r
+#install.packages("leaflet")
 #Using leaflet (package)
 library(leaflet)
+```
+
+```
+## Warning: package 'leaflet' was built under R version 3.1.3
+```
+
+```r
 map3 <- Leaflet$new()
 map3$setView(c(51.505, -0.09), zoom = 13)
 map3$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
 map3$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
+map3$print("chartmap3", include_assets=TRUE)
 ```
 
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/leaflet.css>
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/leaflet-rCharts.css>
-<link rel='stylesheet' href=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/legend.css>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/leaflet.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/leaflet-providers.js></script>
-<script type='text/javascript' src=/home/linuxminttest/R/x86_64-pc-linux-gnu-library/3.2/rCharts/libraries/leaflet/external/Control.FullScreen.js></script> 
+```
+## <link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet.css>
+## <link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet-rCharts.css>
+## <link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/legend.css>
+## <script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet.js></script>
+## <script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet-providers.js></script>
+## <script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/Control.FullScreen.js></script> 
+##  <style>
+##   .rChart {
+##     display: block;
+##     margin-left: auto; 
+##     margin-right: auto;
+##     width: 800px;
+##     height: 400px;
+##   }  
+##   </style>
+## <div id = 'chartmap3' class = 'rChart leaflet'></div>
+## <script>
+##   var spec = {
+##  "dom": "chartmap3",
+## "width":            800,
+## "height":            400,
+## "urlTemplate": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+## "layerOpts": {
+##  "attribution": "Map data<a href=\"http://openstreetmap.org\">OpenStreetMap</a>\n         contributors, Imagery<a href=\"http://mapbox.com\">MapBox</a>" 
+## },
+## "center": [         51.505,          -0.09 ],
+## "zoom":             13,
+## "id": "chartmap3" 
+## }
+## 
+##   var map = L.map(spec.dom, spec.mapOpts)
+##   
+##     map.setView(spec.center, spec.zoom);
+## 
+##     if (spec.provider){
+##       L.tileLayer.provider(spec.provider).addTo(map)    
+##     } else {
+## 		  L.tileLayer(spec.urlTemplate, spec.layerOpts).addTo(map)
+##     }
+##      
+##     L
+##   .marker([
+##    51.5,
+##  -0.09 
+## ])
+##   .addTo( map )
+##   .bindPopup("<p> Hi. I am a popup </p>")
+## L
+##   .marker([
+##  51.495,
+## -0.083 
+## ])
+##   .addTo( map )
+##   .bindPopup("<p> Hi. I am another popup </p>")
+##     
+##     
+##     
+##     
+##     if (spec.circle2){
+##       for (var c in spec.circle2){
+##         var circle = L.circle(c.center, c.radius, c.opts)
+##          .addTo(map);
+##       }
+##     }
+##     
+##     
+##     
+##     
+##     
+##    
+##    
+##    
+## </script>
+```
+
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet.css>
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet-rCharts.css>
+<link rel='stylesheet' href=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/legend.css>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/leaflet-providers.js></script>
+<script type='text/javascript' src=/Library/Frameworks/R.framework/Versions/3.1/Resources/library/rCharts/libraries/leaflet/external/Control.FullScreen.js></script> 
  <style>
   .rChart {
     display: block;

@@ -8,19 +8,24 @@ output:
 Sys.setlocale("LC_ALL", "C")
 ```
 
-# DevelopingDataProducts
-##ToolSet
+#DevelopingDataProducts
+An initial toolset used to develop data products.
 
-###shiny & shinyapps  
-`shiny` package - web framework for data product developed in R for intercating grphics and pages
+_`data product: production output(s) of a data analysis.`_
 
-`shinyapps` package - make data product available to everyone
+##shiny & shinyapps  
+`shiny` is web framework for creating data product developed in R. `shinyapps` is a tool to make data product available to everyone as a web product.
 
 
-```{r eval=FALSE}
+```
+#How to install shiny
 install.packages("shiny")
 library(shiny)
+```
 
+Some examples of possible (shiny) data products....
+
+```
 system.file("examples", package="shiny")
 
 runExample("01_hello") # a histogram
@@ -36,30 +41,38 @@ runExample("10_download") # file download wizard
 runExample("11_timer") # an automated timer
 ```
 
+
+Some useful links for `shiny`  
+
 [shiny](http://shiny.rstudio.com/)  
 [runApp](http://shiny.rstudio.com/reference/shiny/latest/runApp.html)  
 [debugging Shiny Application](http://shiny.rstudio.com/articles/debugging.html)  
+A shiny apps by itself runs on the local host. `shinyapps`can be used to make it available to everyone deploying it in the cloud.
 
-
-```{r eval=FALSE}
+```
+#Installing shinyapps
 install.packages("devtools")
 devtools::install_github('rstudio/shinyapps')
 ```
 
- [shinyapps](https://www.shinyapps.io/)
- (__github__)
+Link to [shinyapps](https://www.shinyapps.io/)
+ (use __github user__)
  
- ###`manipulate` function  
- Mainly used for propotyping quick and iterative graphic
+##`manipulate`  
+Mainly used for propotyping quick and iterative graphic run-time (not possible to use it with R markdown).
  
- ```{r eval=FALSE}
+```
+#Installing manipulate
 install.packages("manipulate")
-library(manipulate)
-manipulate(plot(1:x), x = slider(1,100))
 ```
 
-```{r eval=FALSE}
+```
 library(manipulate)
+
+#Ex1
+manipulate(plot(1:x), x = slider(1,100))
+
+#Ex2
 library(UsingR)
 myHist <- function(mu){
   hist(galton$child,col="blue",breaks=100)
@@ -71,30 +84,43 @@ myHist <- function(mu){
 manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
 ```
 
- [manipulate](https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate)
+Documentation about [manipulate](https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate)
  
-###rCharts  
+##rCharts  
 rCharts is an R package to create, customize and publish interactive javascript visualizations from R using a familiar lattice style plotting interface.
 
-[rCharts](http://ramnathv.github.io/rCharts/)
+Documentation: [rCharts](http://ramnathv.github.io/rCharts/)
 
-```{r eval=FALSE}
+```
+#Installing rCharts
 require(devtools)
-install_github("rCharts", "ramnathv")
+install_github("ramnathv/rCharts")
 ```
 
-###googlevis
+##googleVis
+googleVis is an R package to use R as front end to create google visualizations.
 
-###plotly (__github__)
+```
+#Installing googleVis
+install.packages("googleVis")
+```
+
+[using googleVis with R](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf)  
+[googleVis examples](https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html)  
+[using googleVis with Shiny](http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html)  
+
+##plotly  
 Plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.
 
-[plotly](https://plot.ly/)  
-[plotly and R](https://plot.ly/r/)
-[plotly in knitr reports](https://plot.ly/r/knitr/)
-[plotly in knitr reports - 2](http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/)
+[plotly](https://plot.ly/)  (use __github user__)    
+[plotly and R](https://plot.ly/r/)  
+[plotly in knitr reports](https://plot.ly/r/knitr/)  
+[plotly in knitr reports - 2](http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/)  
+[plotly and shiny](https://plot.ly/r/shiny-tutorial/)
 
-```{r eval=FALSE}
-# install.packages("devtools")
+```
+#Installing plotly
+install.packages("devtools")
 devtools::install_github("ropensci/plotly")
 ```
 

@@ -64,45 +64,78 @@ img {
 <p><code>{r echo=FALSE} Sys.setlocale(&quot;LC_ALL&quot;, &quot;C&quot;)</code></p>
 <div id="developingdataproducts" class="section level1">
 <h1>DevelopingDataProducts</h1>
-<div id="toolset" class="section level2">
-<h2>ToolSet</h2>
-<div id="shiny-shinyapps" class="section level3">
-<h3>shiny &amp; shinyapps</h3>
-<p><code>shiny</code> package - web framework for data product developed in R for intercating grphics and pages</p>
-<p><code>shinyapps</code> package - make data product available to everyone</p>
-<p>```{r eval=FALSE} install.packages(“shiny”) library(shiny)</p>
-<p>system.file(“examples”, package=“shiny”)</p>
-<p>runExample(“01_hello”) # a histogram runExample(“02_text”) # tables and data frames runExample(“03_reactivity”) # a reactive expression runExample(“04_mpg”) # global variables runExample(“05_sliders”) # slider bars runExample(“06_tabsets”) # tabbed panels runExample(“07_widgets”) # help text and submit buttons runExample(“08_html”) # Shiny app built from HTML runExample(“09_upload”) # file upload wizard runExample(“10_download”) # file download wizard runExample(“11_timer”) # an automated timer ```</p>
-<p><a href="http://shiny.rstudio.com/">shiny</a><br /><a href="http://shiny.rstudio.com/reference/shiny/latest/runApp.html">runApp</a><br /><a href="http://shiny.rstudio.com/articles/debugging.html">debugging Shiny Application</a></p>
-<p><code>{r eval=FALSE} install.packages(&quot;devtools&quot;) devtools::install_github('rstudio/shinyapps')</code></p>
-<p><a href="https://www.shinyapps.io/">shinyapps</a> (<strong>github</strong>)</p>
-<p>###<code>manipulate</code> function<br /> Mainly used for propotyping quick and iterative graphic</p>
-<p><code>{r eval=FALSE} install.packages(&quot;manipulate&quot;) library(manipulate) manipulate(plot(1:x), x = slider(1,100))</code></p>
-<p><code>{r eval=FALSE} library(manipulate) library(UsingR) myHist &lt;- function(mu){   hist(galton$child,col=&quot;blue&quot;,breaks=100)   lines(c(mu, mu), c(0, 150),col=&quot;red&quot;,lwd=5)   mse &lt;- mean((galton$child - mu)^2)   text(63, 150, paste(&quot;mu = &quot;, mu))   text(63, 140, paste(&quot;MSE = &quot;, round(mse, 2))) } manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))</code></p>
-<p><a href="https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate">manipulate</a></p>
+<p>An initial toolset used to develop data products.</p>
+<p><em><code>data product: production output(s) of a data analysis.</code></em></p>
+<div id="shiny-shinyapps" class="section level2">
+<h2>shiny &amp; shinyapps</h2>
+<p><code>shiny</code> is web framework for creating data product developed in R. <code>shinyapps</code> is a tool to make data product available to everyone as a web product.</p>
+<pre><code>#How to install shiny
+install.packages(&quot;shiny&quot;)
+library(shiny)</code></pre>
+<p>Some examples of possible (shiny) data products….</p>
+<pre><code>system.file(&quot;examples&quot;, package=&quot;shiny&quot;)
+
+runExample(&quot;01_hello&quot;) # a histogram
+runExample(&quot;02_text&quot;) # tables and data frames
+runExample(&quot;03_reactivity&quot;) # a reactive expression
+runExample(&quot;04_mpg&quot;) # global variables
+runExample(&quot;05_sliders&quot;) # slider bars
+runExample(&quot;06_tabsets&quot;) # tabbed panels
+runExample(&quot;07_widgets&quot;) # help text and submit buttons
+runExample(&quot;08_html&quot;) # Shiny app built from HTML
+runExample(&quot;09_upload&quot;) # file upload wizard
+runExample(&quot;10_download&quot;) # file download wizard
+runExample(&quot;11_timer&quot;) # an automated timer</code></pre>
+<p>Some useful links for <code>shiny</code></p>
+<p><a href="http://shiny.rstudio.com/">shiny</a><br /><a href="http://shiny.rstudio.com/reference/shiny/latest/runApp.html">runApp</a><br /><a href="http://shiny.rstudio.com/articles/debugging.html">debugging Shiny Application</a><br />A shiny apps by itself runs on the local host. <code>shinyapps</code>can be used to make it available to everyone deploying it in the cloud.</p>
+<pre><code>#Installing shinyapps
+install.packages(&quot;devtools&quot;)
+devtools::install_github('rstudio/shinyapps')</code></pre>
+<p>Link to <a href="https://www.shinyapps.io/">shinyapps</a> (use <strong>github user</strong>)</p>
 </div>
-<div id="rcharts" class="section level3">
-<h3>rCharts</h3>
+<div id="manipulate" class="section level2">
+<h2><code>manipulate</code></h2>
+<p>Mainly used for propotyping quick and iterative graphic run-time (not possible to use it with R markdown).</p>
+<pre><code>#Installing manipulate
+install.packages(&quot;manipulate&quot;)</code></pre>
+<pre><code>library(manipulate)
+
+#Ex1
+manipulate(plot(1:x), x = slider(1,100))
+
+#Ex2
+library(UsingR)
+myHist &lt;- function(mu){
+  hist(galton$child,col=&quot;blue&quot;,breaks=100)
+  lines(c(mu, mu), c(0, 150),col=&quot;red&quot;,lwd=5)
+  mse &lt;- mean((galton$child - mu)^2)
+  text(63, 150, paste(&quot;mu = &quot;, mu))
+  text(63, 140, paste(&quot;MSE = &quot;, round(mse, 2)))
+}
+manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))</code></pre>
+<p>Documentation about <a href="https://support.rstudio.com/hc/en-us/articles/200551906-Interactive-Plotting-with-Manipulate">manipulate</a></p>
+</div>
+<div id="rcharts" class="section level2">
+<h2>rCharts</h2>
 <p>rCharts is an R package to create, customize and publish interactive javascript visualizations from R using a familiar lattice style plotting interface.</p>
-<p><a href="http://ramnathv.github.io/rCharts/">rCharts</a></p>
-<p><code>{r eval=FALSE} require(devtools) install_github(&quot;rCharts&quot;, &quot;ramnathv&quot;)</code></p>
+<p>Documentation: <a href="http://ramnathv.github.io/rCharts/">rCharts</a></p>
+<pre><code>#Installing rCharts
+require(devtools)
+install_github(&quot;ramnathv/rCharts&quot;)</code></pre>
 </div>
-<div id="googlevis" class="section level3">
-<h3>googlevis</h3>
-</div>
-<div id="plotly-github" class="section level3">
-<h3>plotly (<strong>github</strong>)</h3>
+<div id="googlevis" class="section level2">
+<h2>googleVis</h2>
+<p>googleVis is an R package to use R as front end to create google visualizations.</p>
+<pre><code>#Installing googleVis
+install.packages(&quot;googleVis&quot;)</code></pre>
+<p><a href="https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf">using googleVis with R</a><br /><a href="https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html">googleVis examples</a><br /><a href="http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html">using googleVis with Shiny</a></p>
+<div id="plotly" class="section level3">
+<h3>plotly</h3>
 <p>Plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.</p>
-<p><a href="https://plot.ly/">plotly</a><br /><a href="https://plot.ly/r/">plotly and R</a> <a href="https://plot.ly/r/knitr/">plotly in knitr reports</a> <a href="http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/">plotly in knitr reports - 2</a></p>
+<p><a href="https://plot.ly/">plotly</a> (use <strong>github user</strong>)<br /><a href="https://plot.ly/r/">plotly and R</a> <a href="https://plot.ly/r/knitr/">plotly in knitr reports</a> <a href="http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/">plotly in knitr reports - 2</a></p>
 <p><code>{r eval=FALSE} # install.packages(&quot;devtools&quot;) devtools::install_github(&quot;ropensci/plotly&quot;)</code></p>
 </div>
 </div>
-</div>
-<div id="week-1" class="section level1">
-<h1>Week 1</h1>
-<p>Quiz ```{r echo=FALSE, eval=FALSE} #01 library(manipulate) myPlot &lt;- function(s) { plot(cars<span class="math">\(dist - mean(cars\)</span>dist), cars<span class="math">\(speed - mean(cars\)</span>speed)) abline(0, s) }</p>
-<p>manipulate(myPlot(s), s = slider(0,2, step = 0.1))</p>
-<p>```</p>
 </div>
 
 
