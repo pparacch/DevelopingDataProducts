@@ -129,11 +129,48 @@ install_github(&quot;ramnathv/rCharts&quot;)</code></pre>
 <pre><code>#Installing googleVis
 install.packages(&quot;googleVis&quot;)</code></pre>
 <p><a href="https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis.pdf">using googleVis with R</a><br /><a href="https://cran.r-project.org/web/packages/googleVis/vignettes/googleVis_examples.html">googleVis examples</a><br /><a href="http://www.magesblog.com/2013/02/first-steps-of-using-googlevis-on-shiny.html">using googleVis with Shiny</a></p>
-<div id="plotly" class="section level3">
-<h3>plotly</h3>
+</div>
+<div id="plotly" class="section level2">
+<h2>plotly</h2>
 <p>Plotly is an R package for creating interactive web-based graphs via the open source JavaScript graphing library plotly.js.</p>
-<p><a href="https://plot.ly/">plotly</a> (use <strong>github user</strong>)<br /><a href="https://plot.ly/r/">plotly and R</a> <a href="https://plot.ly/r/knitr/">plotly in knitr reports</a> <a href="http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/">plotly in knitr reports - 2</a></p>
-<p><code>{r eval=FALSE} # install.packages(&quot;devtools&quot;) devtools::install_github(&quot;ropensci/plotly&quot;)</code></p>
+<p><a href="https://plot.ly/">plotly</a> (use <strong>github user</strong>)<br /><a href="https://plot.ly/r/">plotly and R</a><br /><a href="https://plot.ly/r/knitr/">plotly in knitr reports</a><br /><a href="http://www.r-bloggers.com/plot-with-ggplot2-and-plotly-within-knitr-reports/">plotly in knitr reports - 2</a><br /><a href="https://plot.ly/r/shiny-tutorial/">plotly and shiny</a></p>
+<pre><code>#Installing plotly
+install.packages(&quot;devtools&quot;)
+devtools::install_github(&quot;ropensci/plotly&quot;)</code></pre>
+</div>
+<div id="reproducible-presentations" class="section level2">
+<h2>Reproducible Presentations</h2>
+<div id="slidify" class="section level3">
+<h3>slidify</h3>
+<p><code>slidify</code> is one of the main platform used for reproducible presentations in R.</p>
+<p><a href="http://slidify.org/start.html">starting with slidify</a></p>
+<pre><code>#Installing slidify
+#install.packages(&quot;devtools) #devtools must be installed
+require(devtools)
+install_github(&quot;ramnathv/slidify&quot;)
+install_github(&quot;ramnathv/slidifyLibraries&quot;)</code></pre>
+<pre><code>require(slidify)
+require(slidifyLibraries)
+#Set the working directory
+#place where you want to create the presentation
+setwd(&quot;/Users/thePierLo/courseraSpecialization/git_repos/DevelopingDataProducts&quot;)
+author(&quot;first_deck&quot;)</code></pre>
+<p><code>author</code> will perform the following steps</p>
+<ul>
+<li>create a <code>first_deck</code> folder
+<ul>
+<li>containing specific elements
+<ul>
+<li>index.Rmd (presentation master)</li>
+<li>assets folder (css, img, js, etc)</li>
+</ul></li>
+</ul></li>
+<li>initialize git repository in <code>first_deck</code> folder</li>
+<li>create a gh-pages branch (switching to branch)</li>
+<li>adding a <code>.nojekill</code> file to repo</li>
+</ul>
+<p><a href="http://slidify.org/samples/intro/#1">slidify samples</a></p>
+<p><a href="http://slidify.org/publish.html">how to publish</a><br /><a href="https://github.com/ramnathv/slidify/wiki/Publishing">Publishing via git on github</a></p>
 </div>
 </div>
 </div>

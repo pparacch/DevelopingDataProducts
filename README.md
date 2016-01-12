@@ -124,3 +124,40 @@ install.packages("devtools")
 devtools::install_github("ropensci/plotly")
 ```
 
+##Reproducible Presentations
+###slidify
+`slidify` is one of the main platform used for reproducible presentations in R.
+
+[starting with slidify](http://slidify.org/start.html)
+
+```
+#Installing slidify
+#install.packages("devtools) #devtools must be installed
+require(devtools)
+install_github("ramnathv/slidify")
+install_github("ramnathv/slidifyLibraries")
+```
+
+```
+require(slidify)
+require(slidifyLibraries)
+#Set the working directory
+#place where you want to create the presentation
+setwd("/Users/thePierLo/courseraSpecialization/git_repos/DevelopingDataProducts")
+author("first_deck")
+```
+
+`author` will perform the following steps
+
+* create a `first_deck` folder
+    * containing specific elements
+        * index.Rmd (presentation master)
+        * assets folder (css, img, js, etc)
+* initialize git repository in `first_deck` folder
+* create a gh-pages branch (switching to branch)
+* adding a `.nojekill` file to repo
+
+[slidify samples](http://slidify.org/samples/intro/#1)
+
+[how to publish](http://slidify.org/publish.html)  
+[Publishing via git on github](https://github.com/ramnathv/slidify/wiki/Publishing)
